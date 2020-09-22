@@ -66,6 +66,9 @@ public class BankAccount {
 
         System.out.println("Сумма перевода: "+ sum);
         //scanner.close();
+        if (this.sum> this.balance){
+            System.out.println("Сумма снятия больше чем остаток на счету!");
+        }
         if(sum< this.balance){
             /*System.out.print("Введите номер получателя: " );
             int accountNumber2= scanner2.nextInt();
@@ -75,14 +78,11 @@ public class BankAccount {
             System.out.println("Текущий баланс: " + this.balance);
 
         }
-        if (this.sum> this.balance){
-            System.out.println("Сумма снятия больше чем остаток на счету!");
-        }
 
         System.out.println("Вы вышли с аккаунта");
 
 
-
         return this.balance;
+
     }
 }

@@ -72,7 +72,7 @@ public class BankAccountTest {
     }
     @Test
     public void testDebit(){
-        System.out.println("Debit");
+        System.out.println("Debit1");
         int expBalance = 2000;
         int expSum = 1000;
         int expAccountNumber=12345678;
@@ -80,7 +80,17 @@ public class BankAccountTest {
         bankAccount.setAccountNumber(expAccountNumber);
         bankAccount.setBalance(expBalance);
         bankAccount.setSum(expSum);
-
         assertEquals(expResult, bankAccount.debit(bankAccount.getAccountNumber(),bankAccount.getBalance(),bankAccount.getSum()));
+
+        System.out.println("Debit2");
+        int expBalance2 = 2000;
+        int expSum2 = 8000;
+        int expAccountNumber2=12345678;
+        int expResult2 = 2000;
+        bankAccount.setAccountNumber(expAccountNumber2);
+        bankAccount.setBalance(expBalance2);
+        bankAccount.setSum(expSum2);
+
+        assertEquals(expResult2, bankAccount.debit(bankAccount.getAccountNumber(),bankAccount.getBalance(),bankAccount.getSum()));
     }
 }
